@@ -1,0 +1,17 @@
+<?php return array (
+  'preserve_keys' => false,
+  'update_object' => true,
+  'unique_key' => 
+  array (
+    0 => 'namespace',
+    1 => 'controller',
+  ),
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'f8cb1900b05b11607e984f8075e3a003',
+  'package' => 'modx',
+  'class' => 'modAction',
+  'signature' => 'f7d53cb54fef3efda76a95a5e6e99851',
+  'native_key' => 39,
+  'object' => '{"id":39,"namespace":"core","parent":46,"controller":"security\\/usergroup\\/update","haslayout":1,"lang_topics":"user,access,policy,context","assets":"","help_url":"User+Groups"}',
+);

@@ -1,0 +1,16 @@
+<?php return array (
+  'preserve_keys' => false,
+  'update_object' => true,
+  'unique_key' => 
+  array (
+    0 => 'name',
+  ),
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'a11c7778c56d22217d31277f2640e103',
+  'package' => 'modx',
+  'class' => 'modEvent',
+  'signature' => 'c1474c9635ac107a0bc404367714bc7e',
+  'native_key' => NULL,
+  'object' => '{"name":"OnRichTextBrowserInit","service":1,"groupname":"RichText Editor"}',
+);
