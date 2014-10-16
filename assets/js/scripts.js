@@ -23,12 +23,12 @@ $(document).ready(function() {
 	// loaded with.
 	$(window).trigger("hashchange");
 	
-	$(".tweet").tweet({
-	        avatar_size: 16,
-	        count: 1,
-	        query: "saftsaak",
-	        loading_text: "Fetching latest Tweet..."
-	      });
+	// $(".tweet").tweet({
+	//         avatar_size: 16,
+	//         count: 1,
+	//         query: "saftsaak",
+	//         loading_text: "Fetching latest Tweet..."
+	//       });
 	
 	projectLoaded();	
 });
