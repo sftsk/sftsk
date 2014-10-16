@@ -1,0 +1,77 @@
+[2012-11-01 13:13:08] (ERROR @ /setup/index.php) Error 42S22 executing statement: 
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'modTemplateVar.source' in 'field list'
+)
+
+[2012-11-01 13:13:08] (ERROR @ /setup/index.php) Error 42S22 executing statement: 
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'modTemplateVar.source' in 'field list'
+)
+
+[2012-11-01 13:13:08] (ERROR in xPDOManager_mysql::addField @ /var/www/maakee/core/xpdo/om/mysql/xpdomanager.class.php : 301) Error adding field sources.modMediaSource->is_stream: Array
+(
+    [0] => 42S21
+    [1] => 1060
+    [2] => Duplicate column name 'is_stream'
+)
+
+[2012-11-01 13:13:08] (ERROR in xPDOManager_mysql::addIndex @ /var/www/maakee/core/xpdo/om/mysql/xpdomanager.class.php : 329) Error adding index is_stream to sources.modMediaSource: Array
+(
+    [0] => 42000
+    [1] => 1061
+    [2] => Duplicate key name 'is_stream'
+)
+
+[2012-11-01 13:13:08] (ERROR in xPDOManager_mysql::addField @ /var/www/maakee/core/xpdo/om/mysql/xpdomanager.class.php : 301) Error adding field modDashboard->hide_trees: Array
+(
+    [0] => 42S21
+    [1] => 1060
+    [2] => Duplicate column name 'hide_trees'
+)
+
+[2012-11-01 13:13:08] (ERROR in xPDOManager_mysql::addIndex @ /var/www/maakee/core/xpdo/om/mysql/xpdomanager.class.php : 329) Error adding index hide_trees to modDashboard: Array
+(
+    [0] => 42000
+    [1] => 1061
+    [2] => Duplicate key name 'hide_trees'
+)
+
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not copy /var/www/maakee/core/packages/core/modContext/cd0583f5e190451e0235a81793628054/0/ to /var/www/maakee/index.php
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not copy /var/www/maakee/core/packages/core/modContext/cd0583f5e190451e0235a81793628054/1/ to /var/www/maakee/ht.access
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) xPDOVehicle resolver failed: type php (/var/www/maakee/core/packages/core/modContext/cd0583f5e190451e0235a81793628054.resolve.core.resolver)
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not resolve vehicle for object of class modContext; criteria: Array
+(
+    [key] => web
+)
+
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not copy /var/www/maakee/core/packages/core/modContext/200977f91595ab9bc0327e1e0ec25f62/0/ to /var/www/maakee/manager/assets
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not copy /var/www/maakee/core/packages/core/modContext/200977f91595ab9bc0327e1e0ec25f62/1/ to /var/www/maakee/manager/controllers
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not copy /var/www/maakee/core/packages/core/modContext/200977f91595ab9bc0327e1e0ec25f62/2/ to /var/www/maakee/manager/templates
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not copy /var/www/maakee/core/packages/core/modContext/200977f91595ab9bc0327e1e0ec25f62/3/ to /var/www/maakee/manager/min
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not copy /var/www/maakee/core/packages/core/modContext/200977f91595ab9bc0327e1e0ec25f62/4/ to /var/www/maakee/manager/ht.access
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not copy /var/www/maakee/core/packages/core/modContext/200977f91595ab9bc0327e1e0ec25f62/5/ to /var/www/maakee/manager/cache.manifest.php
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not copy /var/www/maakee/core/packages/core/modContext/200977f91595ab9bc0327e1e0ec25f62/6/ to /var/www/maakee/manager/index.php
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) xPDOVehicle resolver failed: type php (/var/www/maakee/core/packages/core/modContext/200977f91595ab9bc0327e1e0ec25f62.resolve.core.resolver)
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not resolve vehicle for object of class modContext; criteria: Array
+(
+    [key] => mgr
+)
+
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not install files from /var/www/maakee/core/packages/core/xPDOFileVehicle/3887269878a173e1fe04e989b4f5e8c2/ to /var/www/maakee/connectors/
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not install files from /var/www/maakee/core/packages/core/xPDOFileVehicle/fa6ebd292bb065f6ace3a8f4e4e1b35f/ to /var/www/maakee/connectors/
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not install files from /var/www/maakee/core/packages/core/xPDOFileVehicle/f0debc8b4e99fe0d574659c01ef674fa/ to /var/www/maakee/connectors/
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not install files from /var/www/maakee/core/packages/core/xPDOFileVehicle/89269e3d5a8251f8a646dac8cc2bdc47/ to /var/www/maakee/connectors/
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not install files from /var/www/maakee/core/packages/core/xPDOFileVehicle/5d852430064ea7d0701b851ad18db57a/ to /var/www/maakee/connectors/
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not install files from /var/www/maakee/core/packages/core/xPDOFileVehicle/4f98ce9597d116bb0f67901ec6e49bab/ to /var/www/maakee/connectors/
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not install files from /var/www/maakee/core/packages/core/xPDOFileVehicle/ae4e67bee4eea49407fb1c707c87a5a2/ to /var/www/maakee/connectors/
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not install files from /var/www/maakee/core/packages/core/xPDOFileVehicle/46d62e54a9a6a0e808dc7b2d10e985b6/ to /var/www/maakee/connectors/
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not install files from /var/www/maakee/core/packages/core/xPDOFileVehicle/1de5d9d56ca071de3d4a82a5d9726fcf/ to /var/www/maakee/connectors/
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not install files from /var/www/maakee/core/packages/core/xPDOFileVehicle/df679566da114f65de52d8f4dc96b2ee/ to /var/www/maakee/connectors/
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) Could not install files from /var/www/maakee/core/packages/core/xPDOFileVehicle/ebdf71a63c4ec853b1e8088523de3ffa/ to /var/www/maakee/connectors/
+[2012-11-01 13:13:11] (ERROR @ /setup/index.php) xPDOVehicle resolver failed: type php (/var/www/maakee/core/packages/core/xPDOFileVehicle/ebdf71a63c4ec853b1e8088523de3ffa.resolve.core.resolver)
