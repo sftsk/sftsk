@@ -1,4 +1,0 @@
-maakee
-======
-
-(Outdated) Personal Portfolio
