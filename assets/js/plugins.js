@@ -46,7 +46,7 @@ window.log = function(){
       }
     }, o);
 
-    // See http://daringfireball.net/2010/07/improved_regex_for_matching_urls
+    // See https://daringfireball.net/2010/07/improved_regex_for_matching_urls
     var url_regexp = /\b((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))/gi;
 
     // Expand values inside simple string templates with {placeholders}
@@ -75,13 +75,13 @@ window.log = function(){
 
     $.fn.extend({
       linkUrl: replacer(url_regexp, function(match) {
-        var url = (/^[a-z]+:/i).test(match) ? match : "http://"+match;
+        var url = (/^[a-z]+:/i).test(match) ? match : "https://"+match;
         return "<a href=\""+url+"\">"+match+"</a>";
       }),
-      linkUser: replacer(/@(\w+)/gi, "@<a href=\"http://"+s.twitter_url+"/$1\">$1</a>"),
+      linkUser: replacer(/@(\w+)/gi, "@<a href=\"https://"+s.twitter_url+"/$1\">$1</a>"),
       // Support various latin1 (\u00**) and arabic (\u06**) alphanumeric chars
       linkHash: replacer(/(?:^| )[\#]+([\w\u00c0-\u00d6\u00d8-\u00f6\u00f8-\u00ff\u0600-\u06ff]+)/gi,
-                         ' <a href="http://'+s.twitter_search_url+'/search?q=&tag=$1&lang=all'+((s.username && s.username.length == 1) ? '&from='+s.username.join("%2BOR%2B") : '')+'">#$1</a>'),
+                         ' <a href="https://'+s.twitter_search_url+'/search?q=&tag=$1&lang=all'+((s.username && s.username.length == 1) ? '&from='+s.username.join("%2BOR%2B") : '')+'">#$1</a>'),
       capAwesome: replacer(/\b(awesome)\b/gi, '<span class="awesome">$1</span>'),
       capEpic: replacer(/\b(epic)\b/gi, '<span class="epic">$1</span>'),
       makeHeart: replacer(/(&lt;)+[3]/gi, "<tt class='heart'>&#x2665;</tt>")
@@ -158,7 +158,7 @@ window.log = function(){
       o.tweet_time = parse_date(item.created_at);
       o.join_text = s.join_text == "auto" ? build_auto_join_text(item.text) : s.join_text;
       o.tweet_id = item.id_str;
-      o.twitter_base = "http://"+s.twitter_url+"/";
+      o.twitter_base = "https://"+s.twitter_url+"/";
       o.user_url = o.twitter_base+o.screen_name;
       o.tweet_url = o.user_url+"/status/"+o.tweet_id;
       o.reply_url = o.twitter_base+"intent/tweet?in_reply_to="+o.tweet_id;
@@ -222,12 +222,12 @@ window.log = function(){
 /*!
  * slideViewerPro 1.0
  * Examples and documentation at: 
- * http://www.gcmingati.net/wordpress/wp-content/lab/jquery/svwt/
+ * https://www.gcmingati.net/wordpress/wp-content/lab/jquery/svwt/
  * 2009-2010 Gian Carlo Mingati
  * Version: 1.0.5 (26-JULY-2009)
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
  * Requires:
  * jQuery v1.3.2 or later
  * Option:
@@ -437,20 +437,20 @@ jQuery.fn.slideViewerPro = function(settings) {
 
 /*
  * jQuery BBQ: Back Button & Query Library - v1.2.1 - 2/17/2010
- * http://benalman.com/projects/jquery-bbq-plugin/
+ * https://benalman.com/projects/jquery-bbq-plugin/
  * 
  * Copyright (c) 2010 "Cowboy" Ben Alman
  * Dual licensed under the MIT and GPL licenses.
- * http://benalman.com/about/license/
+ * https://benalman.com/about/license/
  */
 (function($,p){var i,m=Array.prototype.slice,r=decodeURIComponent,a=$.param,c,l,v,b=$.bbq=$.bbq||{},q,u,j,e=$.event.special,d="hashchange",A="querystring",D="fragment",y="elemUrlAttr",g="location",k="href",t="src",x=/^.*\?|#.*$/g,w=/^.*\#/,h,C={};function E(F){return typeof F==="string"}function B(G){var F=m.call(arguments,1);return function(){return G.apply(this,F.concat(m.call(arguments)))}}function n(F){return F.replace(/^[^#]*#?(.*)$/,"$1")}function o(F){return F.replace(/(?:^[^?#]*\?([^#]*).*$)?.*/,"$1")}function f(H,M,F,I,G){var O,L,K,N,J;if(I!==i){K=F.match(H?/^([^#]*)\#?(.*)$/:/^([^#?]*)\??([^#]*)(#?.*)/);J=K[3]||"";if(G===2&&E(I)){L=I.replace(H?w:x,"")}else{N=l(K[2]);I=E(I)?l[H?D:A](I):I;L=G===2?I:G===1?$.extend({},I,N):$.extend({},N,I);L=a(L);if(H){L=L.replace(h,r)}}O=K[1]+(H?"#":L||!K[1]?"?":"")+L+J}else{O=M(F!==i?F:p[g][k])}return O}a[A]=B(f,0,o);a[D]=c=B(f,1,n);c.noEscape=function(G){G=G||"";var F=$.map(G.split(""),encodeURIComponent);h=new RegExp(F.join("|"),"g")};c.noEscape(",/");$.deparam=l=function(I,F){var H={},G={"true":!0,"false":!1,"null":null};$.each(I.replace(/\+/g," ").split("&"),function(L,Q){var K=Q.split("="),P=r(K[0]),J,O=H,M=0,R=P.split("]["),N=R.length-1;if(/\[/.test(R[0])&&/\]$/.test(R[N])){R[N]=R[N].replace(/\]$/,"");R=R.shift().split("[").concat(R);N=R.length-1}else{N=0}if(K.length===2){J=r(K[1]);if(F){J=J&&!isNaN(J)?+J:J==="undefined"?i:G[J]!==i?G[J]:J}if(N){for(;M<=N;M++){P=R[M]===""?O.length:R[M];O=O[P]=M<N?O[P]||(R[M+1]&&isNaN(R[M+1])?{}:[]):J}}else{if($.isArray(H[P])){H[P].push(J)}else{if(H[P]!==i){H[P]=[H[P],J]}else{H[P]=J}}}}else{if(P){H[P]=F?i:""}}});return H};function z(H,F,G){if(F===i||typeof F==="boolean"){G=F;F=a[H?D:A]()}else{F=E(F)?F.replace(H?w:x,""):F}return l(F,G)}l[A]=B(z,0);l[D]=v=B(z,1);$[y]||($[y]=function(F){return $.extend(C,F)})({a:k,base:k,iframe:t,img:t,input:t,form:"action",link:k,script:t});j=$[y];function s(I,G,H,F){if(!E(H)&&typeof H!=="object"){F=H;H=G;G=i}return this.each(function(){var L=$(this),J=G||j()[(this.nodeName||"").toLowerCase()]||"",K=J&&L.attr(J)||"";L.attr(J,a[I](K,H,F))})}$.fn[A]=B(s,A);$.fn[D]=B(s,D);b.pushState=q=function(I,F){if(E(I)&&/^#/.test(I)&&F===i){F=2}var H=I!==i,G=c(p[g][k],H?I:{},H?F:2);p[g][k]=G+(/#/.test(G)?"":"#")};b.getState=u=function(F,G){return F===i||typeof F==="boolean"?v(F):v(G)[F]};b.removeState=function(F){var G={};if(F!==i){G=u();$.each($.isArray(F)?F:arguments,function(I,H){delete G[H]})}q(G,2)};e[d]=$.extend(e[d],{add:function(F){var H;function G(J){var I=J[D]=c();J.getState=function(K,L){return K===i||typeof K==="boolean"?l(I,K):l(I,L)[K]};H.apply(this,arguments)}if($.isFunction(F)){H=F;return G}else{H=F.handler;F.handler=G}}})})(jQuery,this);
 /*
  * jQuery hashchange event - v1.2 - 2/11/2010
- * http://benalman.com/projects/jquery-hashchange-plugin/
+ * https://benalman.com/projects/jquery-hashchange-plugin/
  * 
  * Copyright (c) 2010 "Cowboy" Ben Alman
  * Dual licensed under the MIT and GPL licenses.
- * http://benalman.com/about/license/
+ * https://benalman.com/about/license/
  */
 (function($,i,b){var j,k=$.event.special,c="location",d="hashchange",l="href",f=$.browser,g=document.documentMode,h=f.msie&&(g===b||g<8),e="on"+d in i&&!h;function a(m){m=m||i[c][l];return m.replace(/^[^#]*#?(.*)$/,"$1")}$[d+"Delay"]=100;k[d]=$.extend(k[d],{setup:function(){if(e){return false}$(j.start)},teardown:function(){if(e){return false}$(j.stop)}});j=(function(){var m={},r,n,o,q;function p(){o=q=function(s){return s};if(h){n=$('<iframe src="javascript:0"/>').hide().insertAfter("body")[0].contentWindow;q=function(){return a(n.document[c][l])};o=function(u,s){if(u!==s){var t=n.document;t.open().close();t[c].hash="#"+u}};o(a())}}m.start=function(){if(r){return}var t=a();o||p();(function s(){var v=a(),u=q(t);if(v!==t){o(t=v,u);$(i).trigger(d)}else{if(u!==t){i[c][l]=i[c][l].replace(/#.*/,"")+"#"+u}}r=setTimeout(s,$[d+"Delay"])})()};m.stop=function(){if(!n){r&&clearTimeout(r);r=0}};return m})()})(jQuery,this);
 
@@ -527,13 +527,13 @@ jQuery.fn.slideViewerPro = function(settings) {
 /*!
 * MediaElement.js
 * HTML5 <video> and <audio> shim and player
-* http://mediaelementjs.com/
+* https://mediaelementjs.com/
 *
 * Creates a JavaScript object that mimics HTML5 MediaElement API
 * for browsers that don't understand HTML5 or can't play the provided codec
 * Can play MP4 (H.264), Ogg, WebM, FLV, WMV, WMA, ACC, and MP3
 *
-* Copyright 2010, John Dyer (http://johndyer.me)
+* Copyright 2010, John Dyer (https://johndyer.me)
 * Dual licensed under the MIT or GPL Version 2 licenses.
 *
 */var mejs=mejs||{};mejs.version="2.1.0";mejs.meIndex=0;mejs.plugins={silverlight:[{version:[3,0],types:["video/mp4","video/m4v","video/mov","video/wmv","audio/wma","audio/m4a","audio/mp3","audio/wav","audio/mpeg"]}],flash:[{version:[9,0,124],types:["video/mp4","video/m4v","video/mov","video/flv","audio/flv","audio/mp3","audio/m4a","audio/mpeg"]}]};
@@ -562,19 +562,19 @@ e[f].url;return j}if(b.mode==="auto"||b.mode==="shim")for(f=0;f<e.length;f++){g=
 b.substr(0,b.indexOf(";")):b},createErrorMessage:function(a,b,c,d){var e=document.createElement("div");e.className="me-cannotplay";try{e.style.width=a.width+"px";e.style.height=a.height+"px"}catch(f){}e.innerHTML=d!==""?'<a href="'+c+'"><img src="'+d+'" /></a>':'<a href="'+c+'"><span>Download File</span></a>';a.parentNode.insertBefore(e,a);a.style.display="none";b.error(a)},createPlugin:function(a,b,c,d,e,f,g,j,h){var k=f=1,i="me_"+d+"_"+mejs.meIndex++,m=new mejs.PluginMediaElement(i,d,e),n=document.createElement("div"),
 l;for(l=a.parentNode;l!==null&&l.tagName.toLowerCase()!="body";){if(l.parentNode.tagName.toLowerCase()=="p"){l.parentNode.parentNode.insertBefore(l,l.parentNode);break}l=l.parentNode}if(c){f=b.videoWidth>0?b.videoWidth:a.getAttribute("width")!==null?a.getAttribute("width"):b.defaultVideoWidth;k=b.videoHeight>0?b.videoHeight:a.getAttribute("height")!==null?a.getAttribute("height"):b.defaultVideoHeight}else if(b.enablePluginDebug){f=320;k=240}m.success=b.success;mejs.MediaPluginBridge.registerPluginElement(i,
 m,a);n.className="me-plugin";a.parentNode.insertBefore(n,a);c=["id="+i,"isvideo="+(c?"true":"false"),"autoplay="+(g?"true":"false"),"preload="+j,"width="+f,"timerrate="+b.timerRate,"height="+k];if(e!==null)d=="flash"?c.push("file="+mejs.Utility.encodeUrl(e)):c.push("file="+e);b.enablePluginDebug&&c.push("debug=true");b.enablePluginSmoothing&&c.push("smoothing=true");h&&c.push("controls=true");switch(d){case "silverlight":n.innerHTML='<object data="data:application/x-silverlight-2," type="application/x-silverlight-2" id="'+
-i+'" name="'+i+'" width="'+f+'" height="'+k+'"><param name="initParams" value="'+c.join(",")+'" /><param name="windowless" value="true" /><param name="background" value="black" /><param name="minRuntimeVersion" value="3.0.0.0" /><param name="autoUpgrade" value="true" /><param name="source" value="'+b.pluginPath+b.silverlightName+'" /></object>';break;case "flash":if(mejs.MediaFeatures.isIE){d=document.createElement("div");n.appendChild(d);d.outerHTML='<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab" id="'+
-i+'" width="'+f+'" height="'+k+'"><param name="movie" value="'+b.pluginPath+b.flashName+"?x="+new Date+'" /><param name="flashvars" value="'+c.join("&amp;")+'" /><param name="quality" value="high" /><param name="bgcolor" value="#000000" /><param name="wmode" value="transparent" /><param name="allowScriptAccess" value="always" /><param name="allowFullScreen" value="true" /></object>'}else n.innerHTML='<embed id="'+i+'" name="'+i+'" play="true" loop="false" quality="high" bgcolor="#000000" wmode="transparent" allowScriptAccess="always" allowFullScreen="true" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" src="'+
+i+'" name="'+i+'" width="'+f+'" height="'+k+'"><param name="initParams" value="'+c.join(",")+'" /><param name="windowless" value="true" /><param name="background" value="black" /><param name="minRuntimeVersion" value="3.0.0.0" /><param name="autoUpgrade" value="true" /><param name="source" value="'+b.pluginPath+b.silverlightName+'" /></object>';break;case "flash":if(mejs.MediaFeatures.isIE){d=document.createElement("div");n.appendChild(d);d.outerHTML='<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab" id="'+
+i+'" width="'+f+'" height="'+k+'"><param name="movie" value="'+b.pluginPath+b.flashName+"?x="+new Date+'" /><param name="flashvars" value="'+c.join("&amp;")+'" /><param name="quality" value="high" /><param name="bgcolor" value="#000000" /><param name="wmode" value="transparent" /><param name="allowScriptAccess" value="always" /><param name="allowFullScreen" value="true" /></object>'}else n.innerHTML='<embed id="'+i+'" name="'+i+'" play="true" loop="false" quality="high" bgcolor="#000000" wmode="transparent" allowScriptAccess="always" allowFullScreen="true" type="application/x-shockwave-flash" pluginspage="https://www.macromedia.com/go/getflashplayer" src="'+
 b.pluginPath+b.flashName+"?"+c.join("&")+'" width="'+f+'" height="'+k+'"></embed>'}a.style.display="none"},updateNative:function(a,b,c,d,e){for(var f in mejs.HtmlMediaElement)a[f]=mejs.HtmlMediaElement[f];if(mejs.MediaFeatures.isChrome)if(d==="none"&&!c){a.src="";a.load();a.canceledPreload=true;a.addEventListener("play",function(){if(a.canceledPreload){a.src=e.url;a.load();a.play();a.canceledPreload=false}},false)}else if(c){a.load();a.play()}b.success(a,a)}};window.mejs=mejs;
 window.MediaElement=mejs.MediaElement;
 
 /*!
  * MediaElementPlayer
- * http://mediaelementjs.com/
+ * https://mediaelementjs.com/
  *
  * Creates a controller bar for HTML5 <video> add <audio> tags
  * using jQuery and MediaElement.js (HTML5 Flash/Silverlight wrapper)
  *
- * Copyright 2010, John Dyer (http://johndyer.me)
+ * Copyright 2010, John Dyer (https://johndyer.me)
  * Dual licensed under the MIT or GPL Version 2 licenses.
  *
  */(function(f){mejs.MepDefaults={poster:"",defaultVideoWidth:480,defaultVideoHeight:270,videoWidth:-1,videoHeight:-1,audioWidth:400,audioHeight:30,startVolume:0.8,loop:false,enableAutosize:true,features:["playpause","current","progress","duration","tracks","volume","fullscreen"]};mejs.mepIndex=0;mejs.MediaElementPlayer=function(a,c){if(!(this instanceof mejs.MediaElementPlayer))return new mejs.MediaElementPlayer(a,c);var b=this,d=mejs.MediaFeatures;b.options=f.extend({},mejs.MepDefaults,c);b.$media=
@@ -631,7 +631,7 @@ c,b,d,e){a={q:a,langpair:c+"|"+b,v:"1.0"};if(d!==""&&d!==null)a.key=d;f.ajax({ur
  * 
  * Yes, it depends on jQuery.
  *
- * Souce: http://www.html5accessibility.com/index-aria.html
+ * Souce: https://www.html5accessibility.com/index-aria.html
  *
  * Todo: Extend Script for other elements, probably even play with fallback JS for inaccessible audio/video.
  *

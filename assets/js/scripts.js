@@ -14,7 +14,7 @@ $(document).ready(function() {
 		var url = e.getState( "project" );
 		if (url)
 		{
-			$('#content').load("http://"+document.domain+"/"+url+ ".html #single_project", projectPreloader);				  
+			$('#content').load("https://"+document.domain+"/"+url+ ".html #single_project", projectPreloader);				  
 		} 
 	}); 
 	

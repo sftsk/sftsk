@@ -69,8 +69,8 @@ body, select, input, textarea {  color: #444; }
 h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
 /*	
-	The simpler Grid from Nick La (http://webdesignerwall.com/about)
-	http://www.webdesignerwall.com/demo/simpler-grid/940grid.html
+	The simpler Grid from Nick La (https://webdesignerwall.com/about)
+	https://www.webdesignerwall.com/demo/simpler-grid/940grid.html
 */
 
 .container {
@@ -142,7 +142,7 @@ img, object, embed {
 max-width: 100%;
 }
 
-/* http://sonspring.com/journal/clearing-floats */
+/* https://sonspring.com/journal/clearing-floats */
 
 .clear {
   clear: both;
@@ -153,7 +153,7 @@ max-width: 100%;
   height: 0;
 }
 
-/* http://mediaelementjs.com/ */
+/* https://mediaelementjs.com/ */
 
 .mejs-container {
 	position: relative;
@@ -759,7 +759,7 @@ max-width: 100%;
 
 
 
-/* http://www.gcmingati.net/wordpress/wp-content/lab/jquery/svwt/index.html jQuery SlideViewer Pro */
+/* https://www.gcmingati.net/wordpress/wp-content/lab/jquery/svwt/index.html jQuery SlideViewer Pro */
 
 
 .svwp ul{list-style-type: none;}/*preloader stuff. do not modify!*/
