@@ -294,6 +294,12 @@ export const site: SiteContent = {
       href: "https://bitsandpieces.fm",
       summary: "booncon's podcast from 2015–2016, rebuilt as a static archive with its own RSS feed.",
     },
+    {
+      name: "slippry",
+      year: 2013,
+      href: "https://github.com/booncon/slippry",
+      summary: "A responsive slider plugin for jQuery, open source. Still on cdnjs and still getting stars.",
+    },
   ],
   // Newest first. ponytail: years marked "est." are guesses; the old pages carry no dates.
   archive: [
