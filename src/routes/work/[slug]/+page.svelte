@@ -19,7 +19,7 @@
     <p class="case-kicker">
       <span>{project.years}</span>
       <span>{project.role}</span>
-      <span class="tag" class:tag--live={project.status === 'Live'} class:tag--tf={project.status === 'In TestFlight'} class:tag--client={project.status === 'Client'}>{project.status}</span>
+      <span class="tag" class:tag--live={project.status === 'Live'} class:tag--tf={project.status === 'Soon'} class:tag--client={project.status === 'Client'}>{project.status}</span>
     </p>
     <h1 class="case-name">{project.name}</h1>
   </header>

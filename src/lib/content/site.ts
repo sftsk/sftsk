@@ -14,7 +14,7 @@ export interface HeroContent {
   intro: string;
 }
 
-export type ProjectStatus = "Live" | "In TestFlight" | "Client";
+export type ProjectStatus = "Live" | "Soon" | "Client";
 
 export interface ProjectItem {
   /** URL segment: /work/<slug>/. Images live in src/lib/assets/projects/<slug>/. */
@@ -130,7 +130,7 @@ export const site: SiteContent = {
       name: "Nami Nami",
       years: "2026",
       role: "Design and development",
-      status: "In TestFlight",
+      status: "Soon",
       tagline: "Your recipes, as a cookbook.",
       description: [
         "A recipe app for iPhone, iPad and Mac that keeps recipes in cookbooks on a shelf instead of in a feed. Every recipe is a page: a photo, the ingredients beside the steps, serif type, and a two-page spread when the screen is wide enough.",
@@ -144,7 +144,7 @@ export const site: SiteContent = {
       name: "formzeit",
       years: "2026",
       role: "Design and development",
-      status: "In TestFlight",
+      status: "Soon",
       tagline: "Turn the hidden sculpture until its shadow makes the shape.",
       description: [
         "A shadow puzzle game. A hidden sculpture of slabs, spikes and decoys stands in front of a lamp. You drag to turn it, or twist with two fingers, until its flat shadow on the wall matches a silhouette. You don't see the sculpture itself until it's solved.",
@@ -158,7 +158,7 @@ export const site: SiteContent = {
       name: "Ambiance",
       years: "2026",
       role: "Design and development",
-      status: "In TestFlight",
+      status: "Soon",
       tagline: "Generative music that listens to the room.",
       description: [
         "Ambiance plays generative music that changes with where you are. The mic listens to the surroundings, and the music blends between three styles: Drift (calm), Bloom (bright, daytime) and Noir (gritty, neon at night).",
@@ -172,7 +172,7 @@ export const site: SiteContent = {
       name: "Timmy!",
       years: "2026",
       role: "Design and development",
-      status: "In TestFlight",
+      status: "Soon",
       tagline: "A time tracker that lives in the Mac menu bar.",
       description: [
         "Time tracking for client work: a menu-bar app on the Mac and an app for iPhone and iPad, built from one target. Start a timer, take meeting notes, then turn the hours into billing and reports.",
@@ -245,7 +245,7 @@ export const site: SiteContent = {
       name: "Tiny Rhyme Box",
       years: "2018–now",
       role: "Development",
-      status: "In TestFlight",
+      status: "Soon",
       tagline: "Four narrated, animated poems for kids, in English, German and Finnish.",
       description: [
         "A picture-book app for kids with four animated poems, each read aloud: Danny, Olga, Irwin and Suzy. The poems are by Marion Tappeiner and the illustrations by Alenka Kramer.",

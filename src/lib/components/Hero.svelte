@@ -62,11 +62,11 @@
     }
 
     function placeMeta() {
-      heroEl.classList.remove('is-abs');
+      heroEl.classList.remove('is-stack');
       metaEl.style.top = '';
+      metaEl.style.bottom = '';
       heroEl.style.removeProperty('--hpb');
       if (innerWidth < 900) return;
-      heroEl.classList.add('is-abs');
       const cs = getComputedStyle(heroEl);
       const hr = heroEl.getBoundingClientRect();
       const l2 = lineEls[1].getBoundingClientRect();
@@ -77,11 +77,12 @@
       const metaLeft = hr.width - parseFloat(cs.paddingRight) - mw;
       // Surname too long to share its line with the intro: stack instead.
       if (l2.right - hr.left + fs * 0.2 > metaLeft) {
-        heroEl.classList.remove('is-abs');
+        heroEl.classList.add('is-stack');
         return;
       }
       const top = Math.max(b2 - mh, b1 + fs * 0.08);
       metaEl.style.top = `${top.toFixed(1)}px`;
+      metaEl.style.bottom = 'auto';
       const over = top + mh - (hr.height - parseFloat(cs.paddingBottom));
       if (over > 0) heroEl.style.setProperty('--hpb', `calc(${over.toFixed(1)}px + clamp(20px, 2.4vw, 36px))`);
     }

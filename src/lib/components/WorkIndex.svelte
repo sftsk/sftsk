@@ -8,7 +8,7 @@
 
   const tagClass: Record<ProjectStatus, string> = {
     Live: 'tag--live',
-    'In TestFlight': 'tag--tf',
+    'Soon': 'tag--tf',
     Client: 'tag--client',
   };
   const startYear = (p: ProjectItem) => String(parseInt(p.years, 10));

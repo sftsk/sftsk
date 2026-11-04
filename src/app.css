@@ -192,11 +192,16 @@ picture {
   align-items: start;
 }
 
-.hero.is-abs .hero-meta {
-  position: absolute;
-  right: var(--g);
-  margin: 0;
-  width: min(30vw, 27rem);
+/* Beside the surname from first paint; the script only fine-tunes `top` (or adds .is-stack). */
+@media (min-width: 900px) {
+  .hero:not(.is-stack) .hero-meta {
+    position: absolute;
+    right: var(--g);
+    /* padding + the gap between the surname's baseline and its line box (~0.08 of the name size) */
+    bottom: calc(clamp(20px, 2.4vw, 36px) + (100vw - 2 * var(--g)) * 0.015);
+    margin: 0;
+    width: min(30vw, 27rem);
+  }
 }
 
 .lead {
@@ -473,7 +478,8 @@ a.mrow:hover::before,
 }
 
 .tag--tf {
-  color: var(--accent);
+  color: var(--ink);
+  border-color: var(--accent);
 }
 
 .tag--tf::before {
@@ -481,7 +487,7 @@ a.mrow:hover::before,
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  border: 1.5px solid currentColor;
+  border: 1.5px solid var(--accent);
 }
 
 .tag--client::before {
