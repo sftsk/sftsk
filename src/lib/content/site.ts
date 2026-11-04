@@ -127,7 +127,7 @@ export const site: SiteContent = {
     // Newest first: the homepage index lists them in this order.
     {
       slug: "nami",
-      name: "Nami",
+      name: "Nami Nami",
       years: "2026",
       role: "Design and development",
       status: "In TestFlight",
@@ -140,8 +140,8 @@ export const site: SiteContent = {
       stack: ["SwiftUI", "SwiftData", "CloudKit", "Foundation Models", "Swift Testing"],
     },
     {
-      slug: "shady",
-      name: "Shady",
+      slug: "formzeit",
+      name: "formzeit",
       years: "2026",
       role: "Design and development",
       status: "In TestFlight",
@@ -226,7 +226,7 @@ export const site: SiteContent = {
       slug: "selectam",
       name: "SelectAM",
       years: "2020–now",
-      role: "Co-founder, product and development",
+      role: "Co-founder and CTO",
       status: "Live",
       tagline: "Finds the parts in an inventory that are worth 3D printing.",
       description: [
@@ -254,6 +254,20 @@ export const site: SiteContent = {
       ],
       stack: ["SwiftUI", "SpriteKit", "Phaser", "Capacitor"],
     },
+    {
+      slug: "booncon",
+      name: "booncon",
+      years: "2011–now",
+      role: "Founder",
+      status: "Live",
+      tagline: "AI and automation consulting in Helsinki.",
+      description: [
+        "booncon is my consultancy. I help companies find where AI and automation actually save time, then build it with them: strategy, workflows, systems and data, and hands-on follow-through.",
+        "I started it in 2011 with two friends. Through booncon I've co-founded a digital agency, booncon PIXELS (now Valve), and an industrial tech company, SelectAM, and advised Torggler since 2016.",
+      ],
+      stack: [],
+      links: [{ label: "booncon.com", href: "https://booncon.com", external: true }],
+    },
   ],
   lab: [
     {
@@ -279,15 +293,6 @@ export const site: SiteContent = {
       name: "bits & pieces",
       href: "https://bitsandpieces.fm",
       summary: "booncon's podcast from 2015–2016, rebuilt as a static archive with its own RSS feed.",
-    },
-    {
-      name: "booncon.com",
-      href: "https://booncon.com",
-      summary: "My consultancy's site. Same stack as this one.",
-    },
-    {
-      name: "Birthday quiz shows",
-      summary: "Two game-show quizzes I built for birthday parties. The questions load from JSON, so the next one is quick.",
     },
   ],
   // Newest first. ponytail: years marked "est." are guesses; the old pages carry no dates.
@@ -371,7 +376,7 @@ export const site: SiteContent = {
       year: 2010, // est.
       summary: "Lighting control for touch panels",
       description: [
-        "Concept and design of an interface for controlling a lighting system. It was made for a proprietary touch panel and later ported to the iPad.",
+        "Concept and design of an interface for controlling a lighting system, from my time as an interface designer at Lunatone in Vienna. It was made for a proprietary touch panel and later ported to the iPad.",
       ],
     },
     {
@@ -415,19 +420,21 @@ export const site: SiteContent = {
       "Away from the screen you'll find me trying new gadgets, throwing a frisbee or brewing the next batch of beer.",
     ],
     timeline: [
+      { years: "2006–2010", title: "Camera assistant and motion designer, AudioVision" },
       { years: "2007–2011", title: "Design studies, Free University of Bolzano" },
+      { years: "2009–2011", title: "Interface designer, Lunatone, Vienna" },
       { years: "2011", title: "Moved to Helsinki, started booncon" },
       { years: "2014", title: "Co-founded booncon PIXELS, now Valve" },
       { years: "2016–now", title: "Advisor to Torggler" },
-      { years: "2020–now", title: "Co-founder, SelectAM" },
+      { years: "2020–now", title: "Co-founder and CTO, SelectAM" },
     ],
   },
   contact: {
     title: "Say hi",
     summary: "About work, a side project or a second opinion on one. Email works best.",
     email: {
-      label: "luki@maakee.me",
-      href: "mailto:luki@maakee.me",
+      label: "hi@sftsk.com",
+      href: "mailto:hi@sftsk.com",
     },
     github: {
       label: "GitHub",
@@ -436,8 +443,7 @@ export const site: SiteContent = {
     },
     linkedin: {
       label: "LinkedIn",
-      // TODO(Lukas): check. Taken from the 2011 contact page (at.linkedin.com/in/saftsaak).
-      href: "https://www.linkedin.com/in/saftsaak/",
+      href: "https://www.linkedin.com/in/sftsk/",
       external: true,
     },
   },

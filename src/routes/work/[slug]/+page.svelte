@@ -42,7 +42,7 @@
       <div><dt>Years</dt><dd>{project.years}</dd></div>
       <div><dt>Role</dt><dd>{project.role}</dd></div>
       <div><dt>Status</dt><dd>{project.status}</dd></div>
-      <div><dt>Stack</dt><dd>{project.stack.join(', ')}</dd></div>
+      {#if project.stack.length}<div><dt>Stack</dt><dd>{project.stack.join(', ')}</dd></div>{/if}
     </dl>
   </div>
 

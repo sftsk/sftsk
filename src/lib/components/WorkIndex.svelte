@@ -245,7 +245,7 @@
                 <div><dt>Years</dt><dd>{p.years}</dd></div>
                 <div><dt>Role</dt><dd>{p.role}</dd></div>
                 <div><dt>Status</dt><dd>{p.status}</dd></div>
-                <div><dt>Stack</dt><dd>{p.stack.join(', ')}</dd></div>
+                {#if p.stack.length}<div><dt>Stack</dt><dd>{p.stack.join(', ')}</dd></div>{/if}
                 <div><dt></dt><dd><a class="more" href="/work/{p.slug}/">Read the case →</a></dd></div>
               </dl>
             </div>
