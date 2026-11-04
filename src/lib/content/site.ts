@@ -286,10 +286,6 @@ export const site: SiteContent = {
       summary: "Beer label generator for print and e-ink. For the home brew.",
     },
     {
-      name: "Wardrobe",
-      summary: "An offline Android app to catalogue clothes and mix outfits, with mannequin pictures from Gemini.",
-    },
-    {
       name: "bits & pieces",
       href: "https://bitsandpieces.fm",
       summary: "booncon's podcast from 2015–2016, rebuilt as a static archive with its own RSS feed.",
