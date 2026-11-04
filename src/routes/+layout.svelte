@@ -22,6 +22,9 @@
         domain: site.plausible.domain,
         ...(site.plausible.endpoint && { endpoint: site.plausible.endpoint }),
         autoCapturePageviews: false,
+        // Clicks to project sites and the archive's font download show up as events.
+        outboundLinks: true,
+        fileDownloads: true,
         bindToWindow: true,
       });
       track('pageview', {});
