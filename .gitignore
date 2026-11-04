@@ -1,0 +1,7 @@
+/.svelte-kit
+build
+dist
+node_modules
+.DS_Store
+.open-design
+Open Design

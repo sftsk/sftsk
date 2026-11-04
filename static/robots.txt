@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sftsk.com/sitemap.xml
