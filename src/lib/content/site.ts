@@ -290,9 +290,9 @@ export const site: SiteContent = {
     },
     {
       name: "bits & pieces",
-      year: 2026,
+      year: 2015,
       href: "https://bitsandpieces.fm",
-      summary: "booncon's podcast from 2015–2016, rebuilt as a static archive with its own RSS feed.",
+      summary: "booncon's podcast: seven episodes between 2015 and 2016.",
     },
     {
       name: "slippry",
