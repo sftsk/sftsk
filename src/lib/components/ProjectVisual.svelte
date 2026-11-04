@@ -55,7 +55,7 @@
     <g transform="translate(222 150)" stroke-linejoin="round" stroke-width="1.5">
       <polygon points="0,-46 46,-22 0,2 -46,-22" fill="rgba(236,233,225,.12)" stroke="#ece9e1" />
       <polygon points="-46,-22 0,2 0,52 -46,28" fill="none" stroke="#ece9e1" />
-      <polygon points="0,2 46,-22 46,28 0,52" fill="#60c1e5" stroke="#60c1e5" />
+      <polygon points="0,2 46,-22 46,28 0,52" fill="#30afff" stroke="#30afff" />
       <path d="M-23,-34 L23,-10" stroke="#ece9e1" stroke-dasharray="3 3" fill="none" />
     </g>
     <path d="M276 150 H292" stroke="#ece9e1" stroke-width="1.2" stroke-dasharray="2 4" fill="none" />

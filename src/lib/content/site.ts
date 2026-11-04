@@ -10,7 +10,6 @@ export interface ActionLink {
 }
 
 export interface HeroContent {
-  /** Trusted HTML: may contain <em>. */
   title: string;
   intro: string;
 }
@@ -116,7 +115,7 @@ export const site: SiteContent = {
     { label: "Contact", href: "#contact" },
   ],
   hero: {
-    title: "I design software, then <em>actually</em> build it.",
+    title: "I design software, then actually build it.",
     intro:
       "Designer by training, developer by habit, in Helsinki since 2011. I co-founded SelectAM, advise companies through booncon and make small apps on the side.",
   },

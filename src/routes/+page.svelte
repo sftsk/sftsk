@@ -39,7 +39,7 @@
   {@html `<script type="application/ld+json">${personJson}</script>`}
 </svelte:head>
 
-<Hero hero={site.hero} name={site.about.name} imageAlt={site.about.imageAlt} nav={site.nav} {counts} />
+<Hero hero={site.hero} name={site.about.name} nav={site.nav} {counts} />
 
 <WorkIndex projects={site.projects} />
 

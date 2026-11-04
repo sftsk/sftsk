@@ -1,11 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import portrait from '$lib/assets/lukas.jpg?enhanced';
   import type { NavItem, SiteContent } from '$lib/content/site';
 
   export let hero: SiteContent['hero'];
   export let name: string;
-  export let imageAlt: string;
   export let nav: NavItem[];
   /** Row counts shown next to the jump links, keyed by href. */
   export let counts: Record<string, number> = {};
@@ -182,9 +180,8 @@
     {/each}
   </h1>
   <div class="hero-meta" bind:this={metaEl}>
-    <enhanced:img class="me" src={portrait} alt={imageAlt} sizes="64px" />
     <div>
-      <p class="lead">{@html hero.title}</p>
+      <p class="lead">{hero.title}</p>
       <p class="bio">{hero.intro}</p>
     </div>
     <nav class="jump" aria-label="Sections">

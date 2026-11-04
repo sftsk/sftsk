@@ -10,9 +10,9 @@
   --ink-2: #5f5d58;
   --ink-3: #aaa79f;
   --rule: rgba(18, 18, 17, 0.16);
-  --accent: #60c1e5;
+  --accent: #30afff;
   /* The accent is too light for text on paper; this is the same blue, dark enough to read. */
-  --accent-ink: #1a6a8a;
+  --accent-ink: #0868a8;
   --g: clamp(16px, 2vw, 32px);
   --cg: clamp(12px, 1.6vw, 24px);
   /* year · name · role · status · plus */
@@ -189,7 +189,6 @@ picture {
 .hero-meta {
   margin-top: clamp(18px, 4vw, 28px);
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
   gap: 14px 16px;
   max-width: 34rem;
   align-items: start;
@@ -202,15 +201,6 @@ picture {
   width: min(30vw, 27rem);
 }
 
-.me {
-  width: clamp(48px, 4.2vw, 64px);
-  height: auto;
-  aspect-ratio: 1;
-  object-fit: cover;
-  filter: grayscale(1) contrast(1.08);
-  mix-blend-mode: multiply;
-}
-
 .lead {
   margin: 0;
   font-size: clamp(1.05rem, 1.35vw, 1.4rem);
@@ -218,11 +208,6 @@ picture {
   font-variation-settings: "wght" 720, "wdth" 90;
   letter-spacing: -0.01em;
   text-wrap: balance;
-}
-
-.lead em {
-  font-style: normal;
-  color: var(--accent-ink);
 }
 
 .bio {
@@ -235,7 +220,6 @@ picture {
 }
 
 .jump {
-  grid-column: 1 / -1;
   display: flex;
   flex-wrap: wrap;
   gap: 6px 18px;
