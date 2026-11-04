@@ -200,7 +200,6 @@
   <div class="ihead">
     <h2 id="work-title">Work<span>{span}</span></h2>
     <span class="ih-count">{String(projects.length).padStart(2, '0')} selected</span>
-    <p class="ih-hint"><span class="hint-hover">Hover to preview · Click to open</span><span class="hint-touch">Tap a row to open</span></p>
   </div>
   <div class="cols" aria-hidden="true"><span>Year</span><span>Project</span><span>Role</span><span>Status</span><span></span></div>
 

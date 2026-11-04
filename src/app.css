@@ -274,28 +274,9 @@ picture {
 }
 
 .ih-count,
-.ih-hint,
 .shead p {
   margin: 0;
   color: var(--ink-2);
-}
-
-.ih-hint {
-  margin-left: auto;
-}
-
-.hint-touch {
-  display: none;
-}
-
-@media (hover: none) {
-  .hint-hover {
-    display: none;
-  }
-
-  .hint-touch {
-    display: inline;
-  }
 }
 
 .cols {
@@ -1160,11 +1141,6 @@ a.mrow:hover .c-year,
 /* Phone */
 
 @media (max-width: 699px) {
-  .ih-hint {
-    margin-left: 0;
-    flex-basis: 100%;
-  }
-
   .row-head,
   .mrow,
   .end-row {
