@@ -10,9 +10,7 @@
   --ink-2: #5f5d58;
   --ink-3: #aaa79f;
   --rule: rgba(18, 18, 17, 0.16);
-  --accent: #30afff;
-  /* The accent is too light for text on paper; this is the same blue, dark enough to read. */
-  --accent-ink: #0868a8;
+  --accent: #2b9ee6;
   --g: clamp(16px, 2vw, 32px);
   --cg: clamp(12px, 1.6vw, 24px);
   /* year · name · role · status · plus */
@@ -64,7 +62,7 @@ picture {
 }
 
 :where(a, button, [tabindex]):focus-visible {
-  outline: 3px solid var(--accent-ink);
+  outline: 3px solid var(--ink);
   outline-offset: 2px;
 }
 
@@ -124,7 +122,7 @@ picture {
 }
 
 .bar a:hover {
-  color: var(--accent-ink);
+  color: var(--accent);
 }
 
 .bar-id {
@@ -235,8 +233,8 @@ picture {
 }
 
 .jump a:hover {
-  color: var(--accent-ink);
-  border-color: var(--accent-ink);
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 .jump sup {
@@ -347,7 +345,7 @@ picture {
 .row-head:focus-visible,
 .mrow:focus-visible,
 .end-row:focus-visible {
-  outline: 3px solid var(--accent-ink);
+  outline: 3px solid var(--ink);
   outline-offset: -3px;
 }
 
@@ -456,7 +454,7 @@ a.mrow:hover::before,
 .row.is-active .c-year,
 .row.is-open .c-year,
 .row-head:focus-visible .c-year {
-  color: var(--accent-ink);
+  color: var(--accent);
 }
 
 .list.is-dim .row:not(.is-active):not(.is-open) .c-name {
@@ -494,7 +492,7 @@ a.mrow:hover::before,
 }
 
 .tag--tf {
-  color: var(--accent-ink);
+  color: var(--accent);
 }
 
 .tag--tf::before {
@@ -602,7 +600,7 @@ a.mrow:hover::before,
 }
 
 .more:hover {
-  color: var(--accent-ink);
+  color: var(--accent);
 }
 
 /* Project visuals: screenshots, icons and the drawn cards */
@@ -753,16 +751,6 @@ a.mrow:hover::before,
   margin-left: auto;
 }
 
-.shead a.ih-count {
-  color: var(--ink);
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
-}
-
-.shead a.ih-count:hover {
-  color: var(--accent-ink);
-}
-
 .mrow {
   display: grid;
   grid-template-columns: var(--cols);
@@ -809,7 +797,7 @@ a.mrow:hover .m-name,
 
 a.mrow:hover .c-year,
 .mrow:focus-visible .c-year {
-  color: var(--accent-ink);
+  color: var(--accent);
 }
 
 .sub--archive .m-name {
@@ -912,7 +900,7 @@ a.mrow:hover .c-year,
 .end-row:hover .end-name,
 .end-row:focus-visible .end-name {
   font-variation-settings: "wght" 800, "wdth" 100;
-  color: var(--accent-ink);
+  color: var(--accent);
 }
 
 .foot {
@@ -932,7 +920,7 @@ a.mrow:hover .c-year,
 }
 
 .foot a:hover {
-  color: var(--accent-ink);
+  color: var(--accent);
 }
 
 .foot .foot-note {

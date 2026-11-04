@@ -10,8 +10,6 @@
 
   const personJson = escapeInlineScript(JSON.stringify(personJsonLd));
   const counts = { '#work': site.projects.length, '#lab': site.lab.length };
-  // Newest first, like the rest of the index.
-  const archive = [...site.archive].reverse();
 
   // The bar shows the year of whichever row is at the top of the screen.
   let markers: HTMLElement[] = [];
@@ -101,13 +99,13 @@
   <div class="shead">
     <h2 id="archive-title">Archive</h2>
     <p>Early work and university projects</p>
-    <a class="ih-count" href="/archive/index.html">The old site →</a>
+    <span class="ih-count">{String(site.archive.length).padStart(2, '0')}</span>
   </div>
   <ol class="mini">
-    {#each archive as item, i}
-      {@const ditto = i > 0 && archive[i - 1].year === item.year}
+    {#each site.archive as item, i}
+      {@const ditto = i > 0 && site.archive[i - 1].year === item.year}
       <li data-year={item.year}>
-        <a class="mrow" href={item.href}>
+        <a class="mrow" href="/archive/{item.slug}/">
           <span class="c-year">
             {#if ditto}<span class="ditto" aria-hidden="true">"</span><span class="yr-rep">{item.year}</span>{:else}{item.year}{/if}
           </span>

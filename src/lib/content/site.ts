@@ -37,11 +37,15 @@ export interface LabItem {
 }
 
 export interface ArchiveItem {
+  /** URL segment: /archive/<slug>/. Images live in src/lib/assets/archive/<slug>/, videos in static/archive/<slug>/. */
+  slug: string;
   name: string;
   year: number;
   summary: string;
-  /** The project's page on the old site, kept as it was under static/archive/. */
-  href: string;
+  description: string[];
+  /** Paths under static/, with an optional poster.jpg beside them. */
+  videos?: string[];
+  links?: ActionLink[];
 }
 
 export interface TimelineItem {
@@ -237,16 +241,16 @@ export const site: SiteContent = {
       ],
     },
     {
-      slug: "tiny-tin-box",
-      name: "Tiny Tin Box",
-      years: "2015–now",
+      slug: "tiny-rhyme-box",
+      name: "Tiny Rhyme Box",
+      years: "2018–now",
       role: "Development",
       status: "In TestFlight",
-      tagline: "Narrated picture books for kids, in English, German and Finnish.",
+      tagline: "Four narrated, animated poems for kids, in English, German and Finnish.",
       description: [
-        "Tiny Tin Box is the label for my children's book apps. Tiny Rhyme Box has four animated, narrated poems, written by Marion Tappeiner and illustrated by Alenka Kramer. It first shipped in 2018 as a Phaser web app wrapped for iOS.",
-        "In 2026 I rewrote it natively in SwiftUI and SpriteKit, with each word highlighted as the narrator reads it, and rebuilt Elliott & Dodo, a 12-page book from 2015/16 that never made it to the App Store.",
-        "Text placement is worked out per screen so the words land on open sky or grass instead of on top of a character, and the characters react when you tap them.",
+        "A picture-book app for kids with four animated poems, each read aloud: Danny, Olga, Irwin and Suzy. The poems are by Marion Tappeiner and the illustrations by Alenka Kramer.",
+        "It first shipped in 2019 under Tiny Tin Box, my label for children's apps: a Phaser web app wrapped for iOS, first with Cordova and later with Capacitor.",
+        "In 2026 I rewrote it natively in SwiftUI and SpriteKit, with no third-party code. The narration highlights each line as it's read.",
       ],
       stack: ["SwiftUI", "SpriteKit", "Phaser", "Capacitor"],
     },
@@ -286,20 +290,119 @@ export const site: SiteContent = {
       summary: "Two game-show quizzes I built for birthday parties. The questions load from JSON, so the next one is quick.",
     },
   ],
-  // ponytail: years marked "est." are guesses; the old pages carry no dates.
+  // Newest first. ponytail: years marked "est." are guesses; the old pages carry no dates.
   archive: [
-    { name: "Z610i themes", year: 2007, summary: "Phone themes for Sony Ericsson", href: "/archive/z610i-themes.html" }, // est.
-    { name: "iGoogle sleek_dark", year: 2009, summary: "iGoogle theme, a million users", href: "/archive/igoogle-sleek-dark.html" }, // est.
-    { name: "FillMyScreen", year: 2009, summary: "Flash site with a pin board", href: "/archive/fillmyscreen.html" }, // est.
-    { name: "Dali Server UI", year: 2010, summary: "Lighting control for touch panels", href: "/archive/dali-server-ui.html" }, // est.
-    { name: "Hypercube", year: 2010, summary: "Animation projected onto a cube", href: "/archive/hypercube.html" }, // est.
-    { name: "it.Tastes", year: 2010, summary: "Tongue-shaped spoon that measures salt", href: "/archive/it-tastes.html" }, // est.
-    { name: "Lyricalizer", year: 2010, summary: "Interactive lyrics, moved by the mouse", href: "/archive/lyricalizer.html" },
-    { name: "maakeeFTR Light", year: 2010, summary: "A typeface, capitals only", href: "/archive/maakeeftr-light.html" },
-    { name: "Lokale Kinospots", year: 2010, summary: "Three cinema spots for a local portal", href: "/archive/lokale-kinospots.html" },
-    { name: "Skype Plain Modern", year: 2011, summary: "Chat style for a Skype competition", href: "/archive/skype-plain-modern.html" },
-    { name: "Facebook freedom", year: 2011, summary: "Safari extension against Facebook habits", href: "/archive/facebook-freedom.html" },
-    { name: "ofc", year: 2011, summary: "Quiz game from a 48-hour hackathon", href: "/archive/ofc.html" },
+    {
+      slug: "ofc",
+      name: "ofc",
+      year: 2011,
+      summary: "Quiz game from a 48-hour hackathon",
+      description: [
+        "An interface draft for a quiz game, made in 48 hours at a hackathon run by Bonnier Publications. The look matches Olivia, Bonnier's women's magazine.",
+        "In that time we got it running as demo apps on Android and Windows Phone 7.",
+      ],
+    },
+    {
+      slug: "facebook-freedom",
+      name: "Facebook freedom",
+      year: 2011,
+      summary: "Safari extension against Facebook habits",
+      description: [
+        "A Safari extension for people hooked on Facebook. Open Facebook and freedom covers it with a blue screen that tells you how long it's been since your last visit. To get in anyway, you have to click a button.",
+      ],
+    },
+    {
+      slug: "skype-plain-modern",
+      name: "Skype Plain Modern",
+      year: 2011,
+      summary: "Chat style for a Skype competition",
+      description: [
+        "A chat style for Skype, entered in the Skype for Mac design competition. I kept it as plain and clean as possible, with a neat, modern touch.",
+      ],
+    },
+    {
+      slug: "lokale-kinospots",
+      name: "Lokale Kinospots",
+      year: 2010,
+      summary: "Three cinema spots for a local portal",
+      description: ["As a team we wrote, filmed and edited a series of three spots for a local web portal."],
+      videos: ["/archive/lokale-kinospots/1.mp4", "/archive/lokale-kinospots/2.mp4", "/archive/lokale-kinospots/3.mp4"],
+    },
+    {
+      slug: "maakeeftr-light",
+      name: "maakeeFTR Light",
+      year: 2010,
+      summary: "A typeface, capitals only",
+      description: [
+        "A typeface I drew for a typography course at university. It only has capitals, and the kerning isn't perfect. Use it for whatever you like.",
+      ],
+      links: [{ label: "Download the font", href: "/archive/maakeeftr-light/maakeeFTR-Light.otf" }],
+    },
+    {
+      slug: "lyricalizer",
+      name: "Lyricalizer",
+      year: 2010,
+      summary: "Interactive lyrics, moved by the mouse",
+      description: [
+        "Software that shows a song's lyrics in an interactive way: move the mouse while the song plays and the words change how they look.",
+        "It ran as a Java applet, which browsers no longer support, so these screenshots are what's left.",
+      ],
+    },
+    {
+      slug: "it-tastes",
+      name: "it.Tastes",
+      year: 2010, // est.
+      summary: "Tongue-shaped spoon that measures salt",
+      description: [
+        "A kitchen tool that measures salt: a spoon shaped like a tongue. Dip it into any dish and it shows how salty it is, so the cook gets the amount right in a simple, playful way.",
+      ],
+    },
+    {
+      slug: "hypercube",
+      name: "Hypercube",
+      year: 2010, // est.
+      summary: "Animation projected onto a cube",
+      description: ["An animation of a pattern evolving, projected onto a cube so it could play with all three dimensions."],
+      videos: ["/archive/hypercube/1.mp4"],
+    },
+    {
+      slug: "dali-server-ui",
+      name: "Dali Server UI",
+      year: 2010, // est.
+      summary: "Lighting control for touch panels",
+      description: [
+        "Concept and design of an interface for controlling a lighting system. It was made for a proprietary touch panel and later ported to the iPad.",
+      ],
+    },
+    {
+      slug: "fillmyscreen",
+      name: "FillMyScreen",
+      year: 2009, // est.
+      summary: "Flash site with a pin board",
+      description: [
+        "A Flash website for a university project. Its pin board let you click anywhere to pin pictures onto it.",
+        "Browsers no longer run Flash, so these screenshots are what's left.",
+      ],
+    },
+    {
+      slug: "igoogle-sleek-dark",
+      name: "iGoogle sleek_dark",
+      year: 2009, // est.
+      summary: "iGoogle theme, a million users",
+      description: [
+        "A free theme for iGoogle, Google's customisable start page, made in my spare time.",
+        "To my surprise it took off: at its peak more than a million people used it, until Google shut iGoogle down in 2013.",
+      ],
+    },
+    {
+      slug: "z610i-themes",
+      name: "Z610i themes",
+      year: 2007, // est.
+      summary: "Phone themes for Sony Ericsson",
+      description: [
+        "Four themes for the Sony Ericsson Z610i: one inspired by Mac OS X, one by the first iPhone's interface.",
+      ],
+    },
   ],
   about: {
     name: "Lukas Jakob Hafner",
