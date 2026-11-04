@@ -31,8 +31,8 @@ export interface ProjectItem {
 
 export interface LabItem {
   name: string;
-  /** Omitted when there's nothing public to link to. */
-  href?: string;
+  year: number;
+  href: string;
   summary: string;
 }
 
@@ -272,21 +272,25 @@ export const site: SiteContent = {
   lab: [
     {
       name: "ha-boneco-smart",
+      year: 2026,
       href: "https://github.com/sftsk/ha-boneco-smart",
       summary: "Home Assistant integration for the BONECO H700 humidifier over local Wi-Fi. No cloud, installs through HACS.",
     },
     {
       name: "dashy",
+      year: 2026,
       href: "https://github.com/sftsk/ha-dashy",
       summary: "A light Home Assistant wall panel for weak tablets. It shows the new state before Home Assistant confirms it.",
     },
     {
       name: "Labelator",
+      year: 2026,
       href: "https://labelator.sftsk.com",
       summary: "Beer label generator for print and e-ink. For the home brew.",
     },
     {
       name: "bits & pieces",
+      year: 2026,
       href: "https://bitsandpieces.fm",
       summary: "booncon's podcast from 2015–2016, rebuilt as a static archive with its own RSS feed.",
     },

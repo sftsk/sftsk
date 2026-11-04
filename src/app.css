@@ -1081,7 +1081,7 @@ a.mrow:hover .c-year,
 
 @media (max-width: 1099px) {
   :root {
-    --cols: 4.5rem minmax(0, 1fr) 10.5rem 14px;
+    --cols: 5.5rem minmax(0, 1fr) 10.5rem 14px;
   }
 
   .cols {
@@ -1115,7 +1115,9 @@ a.mrow:hover .c-year,
     grid-template-areas: ". main facts .";
   }
 
+  /* Smaller rows split the width between name and description, so the description doesn't stack up. */
   .mrow {
+    grid-template-columns: 5.5rem minmax(0, 1fr) minmax(0, 1fr) 14px;
     grid-template-areas: "year name desc plus";
   }
 

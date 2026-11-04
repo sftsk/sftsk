@@ -41,7 +41,7 @@
 
 <WorkIndex projects={site.projects} />
 
-<section class="sub" id="lab" aria-labelledby="lab-title" data-year="Lab">
+<section class="sub" id="lab" aria-labelledby="lab-title">
   <div class="shead">
     <h2 id="lab-title">Lab</h2>
     <p>Side projects and experiments</p>
@@ -49,21 +49,16 @@
   </div>
   <ul class="mini">
     {#each site.lab as item, i}
-      <li>
-        <svelte:element
-          this={item.href ? 'a' : 'div'}
-          class="mrow"
-          href={item.href}
-          target={item.href ? '_blank' : undefined}
-          rel={item.href ? 'noreferrer noopener' : undefined}
-        >
+      {@const ditto = i > 0 && site.lab[i - 1].year === item.year}
+      <li data-year={item.year}>
+        <a class="mrow" href={item.href} target="_blank" rel="noreferrer noopener">
           <span class="c-year">
-            {#if i > 0}<span class="ditto" aria-hidden="true">"</span><span class="yr-rep">Lab</span>{:else}Lab{/if}
+            {#if ditto}<span class="ditto" aria-hidden="true">"</span><span class="yr-rep">{item.year}</span>{:else}{item.year}{/if}
           </span>
           <span class="m-name">{item.name}</span>
           <span class="m-desc">{item.summary}</span>
-          {#if item.href}<span class="m-go" aria-hidden="true">↗</span>{/if}
-        </svelte:element>
+          <span class="m-go" aria-hidden="true">↗</span>
+        </a>
       </li>
     {/each}
   </ul>
