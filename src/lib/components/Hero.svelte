@@ -22,7 +22,7 @@
     const lineEls = [...nameEl.querySelectorAll<HTMLElement>('.nl-in')];
     const marks = [...nameEl.querySelectorAll<HTMLElement>('.bl')];
     const chars = lineEls.flatMap((ln, line) =>
-      [...ln.querySelectorAll<HTMLElement>('.ch')].map((el) => ({ el, line, cx: 0, w: 800, d: 100 }))
+      [...ln.querySelectorAll<HTMLElement>('.ch')].map((el) => ({ el, line, cx: 0, w: 800, d: 100, w0: 1, sx: 1 }))
     );
     const line0 = lineEls[0];
     const n0 = chars.filter((c) => c.line === 0).length;
@@ -32,6 +32,7 @@
     let heroH = 1;
     let lastKey = '';
     let raf = 0;
+    let pad = 0;
     const kick = () => {
       if (!raf) raf = requestAnimationFrame(frame);
     };
@@ -42,18 +43,21 @@
         c.el.style.fontVariationSettings = '';
         c.w = 800;
         c.d = 100;
+        c.sx = 1;
+        c.el.style.removeProperty('--sx');
       }
       line0.style.letterSpacing = '';
-      line0.style.marginRight = '';
       const cs = getComputedStyle(heroEl);
       W = heroEl.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
       nameEl.style.fontSize = '100px';
       const w100 = line0.getBoundingClientRect().width || 1;
       fs = Math.max(24, Math.floor(((100 * W) / w100) * 100) / 100 - 0.5);
       nameEl.style.fontSize = `${fs}px`;
+      pad = 2 * parseFloat(getComputedStyle(chars[0].el).paddingLeft);
       for (const c of chars) {
         const r = c.el.getBoundingClientRect();
         c.cx = r.left + r.width / 2;
+        c.w0 = r.width - pad || 1;
       }
       placeMeta();
       heroH = heroEl.offsetHeight;
@@ -132,10 +136,17 @@
       }
       // Keep line 1 exactly page-wide: give the width the thinner letters lose back as letter-spacing.
       line0.style.letterSpacing = '0px';
-      line0.style.marginRight = '0px';
       const ls = Math.max(0, (W - line0.getBoundingClientRect().width) / (n0 - 1));
+      // The ink texture squeezes with each letter (app.css). Layout is fresh from the read above,
+      // and --sx only touches the mask, so these reads and writes cost no extra layout.
+      for (const c of chars) {
+        const sx = (c.el.getBoundingClientRect().width - pad) / c.w0;
+        if (Math.abs(sx - c.sx) > 0.004) {
+          c.sx = sx;
+          c.el.style.setProperty('--sx', sx.toFixed(3));
+        }
+      }
       line0.style.letterSpacing = `${ls.toFixed(2)}px`;
-      line0.style.marginRight = `${(-ls).toFixed(2)}px`;
       kick();
     }
 
@@ -174,9 +185,11 @@
 <section class="hero" id="top" aria-label="Introduction" bind:this={heroEl}>
   <h1 class="name" bind:this={nameEl}>
     <span class="sr">{name}</span>
-    {#each lines as line}
+    {#each lines as line, li}
       <span class="nl" aria-hidden="true"
-        ><span class="nl-in">{#each [...line] as char}<span class="ch">{char}</span>{/each}<i class="bl"></i></span></span
+        ><span class="nl-in">{#each [...line] as char, i}<span class="ch" style:--o="{(((li * 11 + i) * 0.618) % 1 * -1.6).toFixed(2)}em"
+            >{char}</span
+          >{/each}<i class="bl"></i></span></span
       >
     {/each}
   </h1>

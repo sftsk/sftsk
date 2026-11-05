@@ -45,6 +45,38 @@ body {
   font-family: var(--display);
   overflow-x: clip;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* Film grain over the whole page, same tile as booncon.com: a seamless 160px tile of dark specks
+   at 2x, baked from feTurbulence because Safari tiles live SVG noise unevenly. It covers the body,
+   so it scrolls with the page like paper texture. */
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  background-image: url("./lib/assets/grain.webp");
+  background-size: 160px;
+  opacity: 0.12;
+}
+
+/* Big titles print in worn ink: ink.png (scripts/bake-ink.mjs) masks them in a tile sized in em,
+   so it scales with the type. In the name every letter carries its own patch of the tile (--o),
+   and Hero.svelte squeezes it along with the letter as it thins (--sx). */
+.name .ch,
+.case-name {
+  mask-image: url("./lib/assets/ink.png");
+  mask-size: calc(1.6em * var(--sx, 1)) 1.6em;
+  mask-position: calc(var(--o, 0em) * var(--sx, 1)) 0;
+}
+
+/* Room for ink that pokes out of the box (kerned overhangs, descenders under the tight
+   line-height) so the mask doesn't cut it off; the negative margins keep the layout as it was. */
+.name .ch {
+  padding: 0 0.05em;
+  margin: 0 -0.05em;
 }
 
 a {
@@ -175,6 +207,11 @@ picture {
 .nl-in {
   display: inline-block;
   white-space: pre;
+}
+
+/* Letter-spacing also trails the last letter; without this the spaced-out line pokes past the page. */
+.nl-in .ch:last-of-type {
+  letter-spacing: 0;
 }
 
 .bl {
@@ -1016,7 +1053,8 @@ a.mrow:hover .c-year,
 }
 
 .case-name {
-  margin: 0;
+  padding: 0 0.05em 0.25em;
+  margin: 0 -0.05em -0.25em;
   font-size: clamp(3rem, 12vw, 12rem);
   line-height: 0.84;
   letter-spacing: -0.035em;
