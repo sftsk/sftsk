@@ -44,7 +44,6 @@
         c.d = 100;
       }
       line0.style.letterSpacing = '';
-      line0.style.marginRight = '';
       const cs = getComputedStyle(heroEl);
       W = heroEl.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
       nameEl.style.fontSize = '100px';
@@ -132,10 +131,8 @@
       }
       // Keep line 1 exactly page-wide: give the width the thinner letters lose back as letter-spacing.
       line0.style.letterSpacing = '0px';
-      line0.style.marginRight = '0px';
       const ls = Math.max(0, (W - line0.getBoundingClientRect().width) / (n0 - 1));
       line0.style.letterSpacing = `${ls.toFixed(2)}px`;
-      line0.style.marginRight = `${(-ls).toFixed(2)}px`;
       kick();
     }
 

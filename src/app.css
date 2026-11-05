@@ -177,6 +177,11 @@ picture {
   white-space: pre;
 }
 
+/* Letter-spacing also trails the last letter; without this the spaced-out line pokes past the page. */
+.nl-in .ch:last-of-type {
+  letter-spacing: 0;
+}
+
 .bl {
   display: inline-block;
   width: 0;
