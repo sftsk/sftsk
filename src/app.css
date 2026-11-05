@@ -62,12 +62,12 @@ body::after {
   opacity: 0.12;
 }
 
-/* Big titles print in worn ink: ink.webp (scripts/bake-ink.mjs) masks them in a tile sized in em,
+/* Big titles print in worn ink: ink.png (scripts/bake-ink.mjs) masks them in a tile sized in em,
    so it scales with the type. In the name every letter carries its own patch of the tile (--o),
    and Hero.svelte squeezes it along with the letter as it thins (--sx). */
 .name .ch,
 .case-name {
-  mask-image: url("./lib/assets/ink.webp");
+  mask-image: url("./lib/assets/ink.png");
   mask-size: calc(1.6em * var(--sx, 1)) 1.6em;
   mask-position: calc(var(--o, 0em) * var(--sx, 1)) 0;
 }
