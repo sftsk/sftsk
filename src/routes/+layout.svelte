@@ -51,23 +51,3 @@
 </main>
 
 <Footer />
-
-<!-- Printed-ink titles (app.css applies it): slightly rough edges, and the paper showing through
-     where the ink ran thin. Fine specks are thresholded against large blotches, so the wear gathers
-     in patches instead of spreading evenly. The last matrix's -11.4 sets how worn: lower is cleaner.
-     Filter sizes are in px, not em, so phones get #ink-sm: the same texture k times finer. -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  {#each [{ id: 'ink', k: 1 }, { id: 'ink-sm', k: 2.5 }] as { id, k }}
-    <filter {id} x="-1%" y="-2%" width="102%" height="104%" color-interpolation-filters="sRGB">
-      <feTurbulence type="fractalNoise" baseFrequency={0.08 * k} numOctaves="2" seed="4" result="warp" />
-      <feDisplacementMap in="SourceGraphic" in2="warp" scale={3 / k} xChannelSelector="R" yChannelSelector="G" result="rough" />
-      <feTurbulence type="fractalNoise" baseFrequency={0.7 * k} seed="9" />
-      <feColorMatrix values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0 1" result="fine" />
-      <feTurbulence type="fractalNoise" baseFrequency={0.01 * k} numOctaves="2" seed="2" />
-      <feColorMatrix values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0 1" result="blot" />
-      <feComposite in="fine" in2="blot" operator="arithmetic" k2="0.5" k3="0.5" />
-      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  30 0 0 0 -11.4" result="ink" />
-      <feComposite in="rough" in2="ink" operator="in" />
-    </filter>
-  {/each}
-</svg>
