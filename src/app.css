@@ -45,6 +45,34 @@ body {
   font-family: var(--display);
   overflow-x: clip;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* Film grain over the whole page, same tile as booncon.com: a seamless 160px tile of dark specks
+   at 2x, baked from feTurbulence because Safari tiles live SVG noise unevenly. It covers the body,
+   so it scrolls with the page like paper texture. */
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  background-image: url("./lib/assets/grain.webp");
+  background-size: 160px;
+  opacity: 0.12;
+}
+
+/* Big titles print in ink: the #ink SVG filters in +layout.svelte. */
+.name,
+.case-name {
+  filter: url(#ink);
+}
+
+@media (max-width: 699px) {
+  .name,
+  .case-name {
+    filter: url(#ink-sm);
+  }
 }
 
 a {
